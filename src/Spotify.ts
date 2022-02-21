@@ -1,4 +1,4 @@
-import Track from "./Track";
+import Track from "./typing/Track";
 
 const clientId = '74639cabdd1e4c2aae147fbdd6659cee';
 const redirectURI = window.location.origin;
