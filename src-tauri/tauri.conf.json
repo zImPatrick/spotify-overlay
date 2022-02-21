@@ -55,8 +55,8 @@
     "windows": [
       {
         "title": "Spotify Overlay",
-        "width": 240,
-        "height": 90,
+        "width": 216,
+        "height": 51,
         "resizable": true,
         "fullscreen": false,
         "alwaysOnTop": true,

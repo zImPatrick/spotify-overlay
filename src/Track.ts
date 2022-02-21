@@ -19,4 +19,5 @@ interface Item {
 export default interface Track {
 	item: Item;
 	progress_ms: number;
+	currently_playing_type: string;
 }

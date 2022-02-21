@@ -1,12 +1,13 @@
 {
   "name": "spotify-overlay",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "devwindow": "tauri dev"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.0.0-rc.1",
