@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: spotify-circular, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #191414;
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-item {
+  display:flex;
+  align-items: center;
+  max-height: calc(100vh - 10px);
+}
+.flex-item img{
+  flex-grow:0;
+  flex-shrink:0;
+  height: calc(100vh - 10px);
+  width: calc(100vh - 10px);
+}
+
+.text {
+  padding: 5px;
+}
+.text p {
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+.progressBar {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  width: 0%;
+  height: 10px;
+  background-color: #1db954;
+  z-index: 100;
+}
+
+.author {
+  color: #b3b3b3;
+}
