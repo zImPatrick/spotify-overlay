@@ -1,6 +1,6 @@
 import SpotifyClient from './Spotify';
-import ProgressBar from './ProgressBar';
-import Track from './Track';
+import ProgressBar from './components/ProgressBar';
+import Track from './typing/Track';
 import { Component } from 'react';
 import pause from './img/pause.svg';
 
