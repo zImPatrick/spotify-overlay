@@ -42,6 +42,15 @@ body {
   color: #ffffff;
 }
 
+a:link, a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:link:hover {
+  text-decoration: underline;
+}
+
 .container {
   display: flex;
   flex-direction: column;

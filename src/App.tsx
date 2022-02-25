@@ -43,10 +43,10 @@ export default class App extends Component<any, AppState> {
     return (
       <div className="container" data-tauri-drag-region>
         <ProgressBar progress={(100*(this.state.data?.progress_ms ?? 0))/(this.state.data?.item?.duration_ms ?? 1)}></ProgressBar>
-        <div className="flex-item " data-tauri-drag-region>
+        <div className="flex-item" data-tauri-drag-region>
           <img src={this.state.data?.item?.album?.images[0].url ?? pause} data-tauri-drag-region />
           <div className='text'>
-            { this.state.data?.item?.name ?? "Unbekannt" }
+            <a target="_blank" href={ this.state.data?.item?.external_urls.spotify }>{ this.state.data?.item?.name ?? "Unbekannt" }</a>
             <p className='author'>{ this.state.data?.item?.artists.map(author => author.name).join(", ") }</p>
           </div>
         </div>
