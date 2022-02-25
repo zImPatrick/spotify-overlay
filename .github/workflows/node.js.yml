@@ -1,27 +1,21 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Node.js CI
-
+name: "publish"
 on:
   push:
-  pull_request:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
+  publish-tauri:
     strategy:
+      fail-fast: false
       matrix:
         platform: [windows-latest]
 
+    runs-on: ${{ matrix.platform }}
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+    - name: setup node
+      uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        node-version: 16
     - name: install Rust stable
       uses: actions-rs/toolchain@v1
       with:
@@ -31,10 +25,14 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y webkit2gtk-4.0
-    - run: npm ci
-    - run: npm run tauri build
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2.3.1
+    - name: install app dependencies and build it
+      run: npm ci && npm run build
+    - uses: tauri-apps/tauri-action@v0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: binary
-        path: src-tauri/target/release/spotify-overlay.exe
+        tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
+        releaseName: "App v__VERSION__"
+        releaseBody: "See the assets to download this version and install."
+        releaseDraft: true
+        prerelease: false
