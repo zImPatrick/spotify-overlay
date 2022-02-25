@@ -47,7 +47,7 @@ export default class App extends Component<any, AppState> {
           <img src={this.state.data?.item?.album?.images[0].url ?? pause} data-tauri-drag-region />
           <div className='text'>
             { this.state.data?.item?.name ?? "Unbekannt" }
-            <p className='author'>{ this.state.data?.item?.artists.map(author => author.name).join(",") }</p>
+            <p className='author'>{ this.state.data?.item?.artists.map(author => author.name).join(", ") }</p>
           </div>
         </div>
       </div>

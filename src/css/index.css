@@ -61,6 +61,7 @@ body {
 
 .text {
   padding: 5px;
+  word-wrap: break-word;
 }
 .text p {
   padding: 0;
