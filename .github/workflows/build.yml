@@ -32,7 +32,6 @@ jobs:
     - name: build fr
       run: npx tauri build
     - name: upload artifact
-    - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
       with:
         path: src-tauri/target/release/spotify-overlay.exe
