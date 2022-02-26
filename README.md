@@ -1,5 +1,5 @@
 # Spotify Overlay [![publish](https://github.com/zImPatrick/spotify-overlay/actions/workflows/build.yml/badge.svg?branch=release)](https://github.com/zImPatrick/spotify-overlay/actions/workflows/build.yml)
-Zeigt an, was du gerade spielst
+🎶 Zeigt an, was du gerade hörst
 <details>
   <summary>Demo</summary>
   
